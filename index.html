@@ -13,193 +13,151 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    :root { --container-pad: 1.5rem; }
     body { scroll-behavior: smooth; }
+
+    /* Type scale refinement */
+    h1, h2, h3, h4 { letter-spacing: 0.02em; }
+    h2 { line-height: 1.1; }
+    h3 { line-height: 1.15; }
+    p { line-height: 1.8; }
 
     /* Mobile optimization */
     @media (max-width: 768px) {
-      h2 { font-size: 2.4rem; line-height: 1.25; }
-      h3 { font-size: 2rem; }
-      section { padding-top: 5rem; padding-bottom: 5rem; }
+      :root { --container-pad: 1.25rem; }
+      h2 { font-size: 2.2rem; }
+      h3 { font-size: 1.9rem; }
+      section { padding-top: 4.5rem; padding-bottom: 4.5rem; }
       figcaption { text-align: center; }
     }
   </style>
 </head>
-<body class="bg-dark text-white font-sans">
+<body class="bg-gray-900 text-white font-sans antialiased">
 
   <!-- NAVBAR -->
-  <header class="fixed w-full z-50 bg-dark/80 backdrop-blur border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <h1 class="text-xl font-serif tracking-wide">forlife<span class="text-gold">.inc</span></h1>
+  <header class="fixed w-full z-50 bg-gray-900/80 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-[var(--container-pad)] py-4 flex items-center justify-between">
+      <h1 class="text-xl font-serif tracking-wide">forlife<span class="text-amber-400">.inc</span></h1>
 
-      <!-- Desktop Menu -->
-      <nav class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
-        <a href="#tentang" class="hover:text-gold">Tentang</a>
-        <a href="#layanan" class="hover:text-gold">Layanan</a>
-        <a href="#portofolio" class="hover:text-gold">Portofolio</a>
-        <a href="#kontak" class="hover:text-gold">Kontak</a>
+      <nav class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.25em]">
+        <a href="#tentang" class="hover:text-amber-400">Tentang</a>
+        <a href="#layanan" class="hover:text-amber-400">Layanan</a>
+        <a href="#portofolio" class="hover:text-amber-400">Portofolio</a>
+        <a href="#kontak" class="hover:text-amber-400">Kontak</a>
       </nav>
 
-      <!-- Hamburger Button -->
-      <button id="menuBtn" class="md:hidden relative w-8 h-8 flex items-center justify-center">
+      <button id="menuBtn" class="md:hidden relative w-9 h-9 flex items-center justify-center">
         <span class="line1 absolute w-6 h-0.5 bg-white transition-all duration-300"></span>
         <span class="line2 absolute w-6 h-0.5 bg-white transition-all duration-300"></span>
         <span class="line3 absolute w-6 h-0.5 bg-white transition-all duration-300"></span>
       </button>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-dark border-t border-white/10">
-      <nav class="flex flex-col text-center py-6 space-y-6 uppercase tracking-widest text-sm">
-        <a href="#tentang" class="hover:text-gold">Tentang</a>
-        <a href="#layanan" class="hover:text-gold">Layanan</a>
-        <a href="#portofolio" class="hover:text-gold">Portofolio</a>
-        <a href="#kontak" class="hover:text-gold">Kontak</a>
+    <div id="mobileMenu" class="hidden md:hidden bg-gray-900 border-t border-white/10">
+      <nav class="flex flex-col text-center py-8 space-y-7 uppercase tracking-[0.25em] text-xs">
+        <a href="#tentang" class="hover:text-amber-400">Tentang</a>
+        <a href="#layanan" class="hover:text-amber-400">Layanan</a>
+        <a href="#portofolio" class="hover:text-amber-400">Portofolio</a>
+        <a href="#kontak" class="hover:text-amber-400">Kontak</a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="min-h-[90vh] flex items-center justify-center text-center px-6 bg-[url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee')] bg-cover bg-center relative">
+  <section class="pt-28 min-h-[92vh] flex items-center justify-center text-center px-[var(--container-pad)] relative" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');background-size:cover;background-position:center;">
     <div class="absolute inset-0 bg-black/70"></div>
     <div class="relative max-w-4xl">
-      <p class="uppercase tracking-[0.3em] text-sm text-gold mb-6">Studio Fotografi Profesional</p>
-      <h2 class="font-serif text-5xl md:text-6xl leading-tight mb-8">
-        Mengabadikan Momen<br />Paling Berharga Dalam Hidup
-      </h2>
-      <p class="text-white/70 text-lg max-w-2xl mx-auto mb-10">
-        Forlife.inc menghadirkan fotografi berkualitas tinggi untuk prewedding, kelulusan, dan momen terbaik dengan sentuhan artistik dan profesional.
-      </p>
-      <a href="#portofolio" class="inline-block border border-gold text-gold px-10 py-4 uppercase tracking-widest text-sm hover:bg-gold hover:text-dark transition">
-        Lihat Portofolio
-      </a>
+      <p class="uppercase tracking-[0.35em] text-xs text-amber-400 mb-6">Studio Fotografi Profesional</p>
+      <h2 class="font-serif text-5xl md:text-6xl mb-8">Mengabadikan Momen<br />Paling Berharga Dalam Hidup</h2>
+      <p class="text-white/70 text-lg max-w-2xl mx-auto mb-12">Forlife.inc menghadirkan fotografi berkualitas tinggi untuk prewedding, kelulusan, dan momen terbaik dengan sentuhan artistik dan profesional.</p>
+      <a href="#portofolio" class="inline-block border border-amber-400 text-amber-400 px-12 py-4 uppercase tracking-[0.25em] text-xs hover:bg-amber-400 hover:text-gray-900 transition">Lihat Portofolio</a>
     </div>
   </section>
 
   <!-- TENTANG -->
   <section id="tentang" class="py-32 bg-black">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center">
+    <div class="max-w-6xl mx-auto px-[var(--container-pad)] grid md:grid-cols-2 gap-24 items-center">
       <div>
-        <h3 class="font-serif text-4xl mb-6">Tentang Forlife.inc</h3>
-        <p class="text-white/70 leading-relaxed mb-6">
-          Forlife.inc adalah studio fotografi yang berfokus pada pengambilan momen-momen bermakna dengan pendekatan elegan dan autentik. Kami percaya setiap fase kehidupan layak dikenang dengan karya visual terbaik.
-        </p>
-        <p class="text-white/70 leading-relaxed">
-          Dengan pengalaman dan standar profesional, kami siap menjadi bagian dari cerita hidup Anda.
-        </p>
+        <h3 class="font-serif text-4xl mb-8">Tentang Forlife.inc</h3>
+        <p class="text-white/70 mb-6">Forlife.inc adalah studio fotografi yang berfokus pada pengambilan momen-momen bermakna dengan pendekatan elegan dan autentik.</p>
+        <p class="text-white/70">Dengan pengalaman dan standar profesional, kami siap menjadi bagian dari cerita hidup Anda.</p>
       </div>
-      <div class="border border-white/10 p-10">
-        <p class="uppercase tracking-widest text-sm text-gold mb-4">Komitmen Kami</p>
-        <p class="text-2xl font-serif leading-snug">
-          “Bukan sekadar foto, tetapi cerita yang hidup selamanya.”
-        </p>
+      <div class="border border-white/10 p-12">
+        <p class="uppercase tracking-[0.25em] text-xs text-amber-400 mb-4">Komitmen Kami</p>
+        <p class="text-2xl font-serif leading-snug">“Bukan sekadar foto, tetapi cerita yang hidup selamanya.”</p>
       </div>
     </div>
   </section>
 
   <!-- LAYANAN -->
-  <section id="layanan" class="py-32">
-    <div class="max-w-7xl mx-auto px-6">
-      <h3 class="font-serif text-4xl text-center mb-20">Layanan Kami</h3>
-      <div class="grid md:grid-cols-3 gap-12">
-        <div class="border border-white/10 p-10 hover:border-gold transition">
-          <h4 class="font-serif text-2xl mb-4">Prewedding</h4>
-          <p class="text-white/70">Konsep eksklusif untuk mengabadikan kisah cinta Anda secara elegan dan berkelas.</p>
+  <section id="layanan" class="py-32 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-[var(--container-pad)]">
+      <h3 class="font-serif text-4xl text-center mb-24">Layanan Kami</h3>
+      <div class="grid md:grid-cols-3 gap-14">
+        <div class="border border-white/10 p-12 hover:border-amber-400 transition">
+          <h4 class="font-serif text-2xl mb-5">Prewedding</h4>
+          <p class="text-white/70">Konsep eksklusif untuk mengabadikan kisah cinta Anda.</p>
         </div>
-        <div class="border border-white/10 p-10 hover:border-gold transition">
-          <h4 class="font-serif text-2xl mb-4">Kelulusan</h4>
-          <p class="text-white/70">Momen pencapaian penting yang dirangkum dalam foto profesional dan berkesan.</p>
+        <div class="border border-white/10 p-12 hover:border-amber-400 transition">
+          <h4 class="font-serif text-2xl mb-5">Kelulusan</h4>
+          <p class="text-white/70">Momen pencapaian penting dengan hasil profesional.</p>
         </div>
-        <div class="border border-white/10 p-10 hover:border-gold transition">
-          <h4 class="font-serif text-2xl mb-4">Dokumentasi</h4>
-          <p class="text-white/70">Pemotretan event dan momen spesial dengan hasil natural dan berkualitas tinggi.</p>
+        <div class="border border-white/10 p-12 hover:border-amber-400 transition">
+          <h4 class="font-serif text-2xl mb-5">Dokumentasi</h4>
+          <p class="text-white/70">Event & momen spesial dengan hasil natural.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- PORTOFOLIO -->
-  <section id="portofolio" class="py-32 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552')] bg-cover bg-fixed relative">
+  <section id="portofolio" class="py-32 relative" style="background-image:url('https://images.unsplash.com/photo-1519741497674-611481863552');background-size:cover;background-position:center;background-attachment:fixed;">
     <div class="absolute inset-0 bg-black/80"></div>
-    <div class="relative max-w-7xl mx-auto px-6">
-      <h3 class="font-serif text-4xl text-center mb-20">Portofolio</h3>
-      <div class="grid md:grid-cols-3 gap-6">
-        <figure class="group">
-          <img src="https://images.unsplash.com/photo-1519741497674-611481863552" class="object-cover w-full h-80 grayscale group-hover:grayscale-0 transition rounded-xl" />
-          <figcaption class="mt-3 text-sm text-white/70">Prewedding • Emotional & Elegant</figcaption>
-        </figure>
-        <figure class="group">
-          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" class="object-cover w-full h-80 grayscale group-hover:grayscale-0 transition rounded-xl" />
-          <figcaption class="mt-3 text-sm text-white/70">Kelulusan • Proud Moment</figcaption>
-        </figure>
-        <figure class="group">
-          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" class="object-cover w-full h-80 grayscale group-hover:grayscale-0 transition rounded-xl" />
-          <figcaption class="mt-3 text-sm text-white/70">Portrait • Signature Look</figcaption>
-        </figure>
-        <figure class="group">
-          <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" class="object-cover w-full h-80 grayscale group-hover:grayscale-0 transition rounded-xl" />
-          <figcaption class="mt-3 text-sm text-white/70">Prewedding • Intimate Detail</figcaption>
-        </figure>
-        <figure class="group">
-          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9" class="object-cover w-full h-80 grayscale group-hover:grayscale-0 transition rounded-xl" />
-          <figcaption class="mt-3 text-sm text-white/70">Kelulusan • Formal Portrait</figcaption>
-        </figure>
-        <figure class="group">
-          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" class="object-cover w-full h-80 grayscale group-hover:grayscale-0 transition rounded-xl" />
-          <figcaption class="mt-3 text-sm text-white/70">Best Moment • Natural Expression</figcaption>
-        </figure>
+    <div class="relative max-w-7xl mx-auto px-[var(--container-pad)]">
+      <h3 class="font-serif text-4xl text-center mb-24">Portofolio</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <figure class="overflow-hidden rounded-2xl"><img loading="lazy" src="https://images.unsplash.com/photo-1519741497674-611481863552" class="object-cover w-full h-80 transition" /></figure>
+        <figure class="overflow-hidden rounded-2xl"><img loading="lazy" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1" class="object-cover w-full h-80 transition" /></figure>
+        <figure class="overflow-hidden rounded-2xl"><img loading="lazy" src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70" class="object-cover w-full h-80 transition" /></figure>
       </div>
     </div>
   </section>
 
   <!-- KONTAK -->
-  <section id="kontak" class="py-32">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="font-serif text-4xl mb-8">Hubungi Kami</h3>
-      <p class="text-white/70 mb-12">Siap mengabadikan momen terbaik Anda bersama Forlife.inc</p>
-      <a href="mailto:hello@forlife.inc" class="inline-block border border-gold text-gold px-12 py-4 uppercase tracking-widest text-sm hover:bg-gold hover:text-dark transition">
-        hello@forlife.inc
-      </a>
+  <section id="kontak" class="py-32 bg-black">
+    <div class="max-w-4xl mx-auto px-[var(--container-pad)] text-center">
+      <h3 class="font-serif text-4xl mb-10">Hubungi Kami</h3>
+      <p class="text-white/70 mb-14">Siap mengabadikan momen terbaik Anda bersama Forlife.inc</p>
+      <a href="mailto:hello@forlife.inc" class="inline-block border border-amber-400 text-amber-400 px-14 py-4 uppercase tracking-[0.25em] text-xs hover:bg-amber-400 hover:text-gray-900 transition">hello@forlife.inc</a>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-white/10 py-10 text-center text-white/50 text-sm">
-    © <span id="year"></span> Forlife.inc — Studio Fotografi Profesional
-  </footer>
+  <footer class="border-t border-white/10 py-12 text-center text-white/50 text-xs bg-gray-900">© <span id="year"></span> Forlife.inc — Studio Fotografi Profesional</footer>
 
-  <!-- Scripts placed at end to ensure DOM is ready -->
   <script>
-    // Set footer year safely
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Mobile menu logic
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
 
     if (menuBtn && mobileMenu) {
-      const line1 = menuBtn.querySelector('.line1');
-      const line2 = menuBtn.querySelector('.line2');
-      const line3 = menuBtn.querySelector('.line3');
-
-      // initial line positions
-      if (line1 && line3) {
-        line1.style.transform = 'translateY(-6px)';
-        line3.style.transform = 'translateY(6px)';
-      }
+      const [l1, l2, l3] = menuBtn.children;
+      l1.style.transform = 'translateY(-6px)';
+      l3.style.transform = 'translateY(6px)';
 
       menuBtn.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
         menuBtn.classList.toggle('active');
-
         if (menuBtn.classList.contains('active')) {
-          if (line1) line1.style.transform = 'rotate(45deg)';
-          if (line2) line2.style.opacity = '0';
-          if (line3) line3.style.transform = 'rotate(-45deg)';
+          l1.style.transform = 'rotate(45deg)';
+          l2.style.opacity = '0';
+          l3.style.transform = 'rotate(-45deg)';
         } else {
-          if (line1) line1.style.transform = 'translateY(-6px)';
-          if (line2) line2.style.opacity = '1';
-          if (line3) line3.style.transform = 'translateY(6px)';
+          l1.style.transform = 'translateY(-6px)';
+          l2.style.opacity = '1';
+          l3.style.transform = 'translateY(6px)';
         }
       });
     }
